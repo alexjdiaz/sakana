@@ -35,10 +35,9 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(libs.bundles.koin.shared)
+            implementation(libs.koin.core)
             implementation(libs.moko.resources)
             implementation(libs.xmlutil.core)
-            implementation(project.dependencies.platform(libs.koin.annotations.bom))
             implementation(project.dependencies.platform(libs.koin.bom))
         }
 
@@ -58,14 +57,6 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-}
-
-dependencies {
-    add("kspCommonMainMetadata", libs.koin.annotations.ksp.compiler)
-    add("kspAndroid", libs.koin.annotations.ksp.compiler)
-    add("kspIosX64", libs.koin.annotations.ksp.compiler)
-    add("kspIosArm64", libs.koin.annotations.ksp.compiler)
-    add("kspIosSimulatorArm64", libs.koin.annotations.ksp.compiler)
 }
 
 ksp {

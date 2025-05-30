@@ -1,8 +1,14 @@
 package se.sakana.module
 
-import org.koin.core.annotation.ComponentScan
-import org.koin.core.annotation.Module
+import org.koin.core.module.Module
+import org.koin.core.module.dsl.viewModelOf
+import org.koin.dsl.module
+import se.sakana.MainViewModel
+import se.sakana.ui.character.CharacterViewModel
 
-@Module
-@ComponentScan("se.sakana")
-object AppModule
+object AppModule {
+    val module: Module = module {
+        viewModelOf(::MainViewModel)
+        viewModelOf(::CharacterViewModel)
+    }
+}

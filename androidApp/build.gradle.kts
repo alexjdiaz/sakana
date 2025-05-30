@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.serialization)
     alias(libs.plugins.ksp)
 }
 
@@ -44,11 +45,10 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     implementation(libs.bundles.compose)
     implementation(libs.bundles.koin.compose)
+    implementation(libs.kotlinx.serialization.json)
     implementation(libs.moko.resources)
-    implementation(project.dependencies.platform(libs.koin.annotations.bom))
     implementation(project.dependencies.platform(libs.koin.bom))
     implementation(projects.shared)
-    ksp(libs.koin.annotations.ksp.compiler)
 }
 
 ksp {
